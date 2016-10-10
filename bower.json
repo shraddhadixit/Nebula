@@ -1,0 +1,39 @@
+{
+	"name": "nebula",
+	"version": "0.1.2",
+	"homepage": "https://github.com/Nebula-UI/Nebula",
+	"authors": [
+		"hegdeashwin <ashwin.hegde3@gmail.com>"
+	],
+	"moduleType": [
+		"amd"
+	],
+	"dependencies": {
+		"jquery": "2.0.3",
+		"backbone": "1.1.2",
+		"underscore": "1.8.2",
+		"handlebars": "2.0.0",
+		"requirejs-text": "2.0.10",
+		"requirejs": "https://github.com/jrburke/requirejs.git#2.1.15",
+		"rjs": "https://github.com/jrburke/r.js.git#2.1.17",
+		"qunit": "1.11.0"
+	},
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"src/bower_components",
+		"test",
+		"tests",
+		"prod"
+	],
+	"keywords": [
+		"skeleton",
+    "scaffolding",
+    "boilerplate",
+    "nebula",
+    "backbone-scaffolding",
+    "backbone-skeleton",
+    "backbone-boilerplate"
+	],
+	"license": "MIT"
+}

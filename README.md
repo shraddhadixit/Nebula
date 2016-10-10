@@ -1,34 +1,48 @@
-# Nebula [![GitHub version](http://img.shields.io/badge/version-0.0.4-brightgreen.svg)](https://github.com/hegdeashwin/Nebula/releases)
+# Nebula [![GitHub version](http://img.shields.io/badge/version-0.1.2-brightgreen.svg)](https://github.com/hegdeashwin/Nebula/releases)
 
 
-[![Build Status](http://travis-ci.org/hegdeashwin/Nebula.png?branch=master)](http://travis-ci.org/hegdeashwin/Nebula)   [![Dependency Status](http://gemnasium.com/hegdeashwin/Nebula.png)](http://gemnasium.com/hegdeashwin/Nebula) [![Node.js version](http://img.shields.io/badge/Node.js-%3E%200.10-brightgreen.svg)](https://github.com/hegdeashwin/Nebula/) [![Built with Grunt](http://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)  [![License version](http://img.shields.io/badge/License-MIT-red.svg)](https://github.com/hegdeashwin/Nebula#license)
+[![Build Status](https://travis-ci.org/Nebula-UI/Nebula.svg?branch=master)](https://travis-ci.org/Nebula-UI/Nebula)   [![Dependency Status](http://gemnasium.com/hegdeashwin/Nebula.png)](http://gemnasium.com/hegdeashwin/Nebula) [![Node.js version](http://img.shields.io/badge/Node.js-%3E%206.0.0-brightgreen.svg)](https://github.com/hegdeashwin/Nebula/) [![Built with Grunt](http://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)  [![License version](http://img.shields.io/badge/License-MIT-red.svg)](https://github.com/hegdeashwin/Nebula#license) [![Supports Docker](https://img.shields.io/badge/Support-Docker-orange.svg)](https://hub.docker.com/r/hegdeashwin/nebula/)
 
 
 Nebula is an open source walking application skeleton for a typical Backbone web apps. You can use it to quickly bootstrap your Backbone web application projects.
 
-Prerequisites
-=============
+## Prerequisites
+
 As Nebula is based on Backbone.js. It is assumed user already knows JavaScript, jQuery, Backbone.js and Underscore.js.
-If you are looking for learning Backbone.js, visit <a href="//github.com/hegdeashwin/Backbone" target="_blank">github.com/hegdeashwin/Backbone</a>.
+If you are looking for learning Backbone.js, visit [github.com/hegdeashwin/Backbone](https://github.com/hegdeashwin/Backbone)
 
 For understanding Nebula skeleton, knowledge of following JavaScript libraries/frameworks are must.
-<ul>
-	<li>Require.js - a JavaScript file and module loader. For more information visit <a href="//requirejs.org/" target="_blank">requirejs.org</a></p></li>
-	<li>Bootstrap Framework 3.0 - a front-end framework for developing responsive, mobile first projects on the web. For more information visit <a href="//getbootstrap.com/" target="_blank">getbootstrap.com</a></li>
-</ul>
+* Require.js - a JavaScript file and module loader. For more information visit [requirejs.org](https://requirejs.org/)
+* Grunt.js - a JavaScript task runner. For more information visit [gruntjs](http://gruntjs.com/)
+* Bootstrap Framework 3.0 - a front-end framework for developing responsive, mobile first projects on the web. For more information visit [Bootstrap](https://getbootstrap.com/)
 
-Installation
-============
+## References
+
+Requirejs training kit, Please visit: [https://github.com/hegdeashwin/learning-requirejs] (https://github.com/hegdeashwin/learning-requirejs)
+
+Gruntjs training kit, Please visit: [https://github.com/hegdeashwin/learning-Grunt] (https://github.com/hegdeashwin/learning-Grunt)
+
+## Installation
+
 Assuming that Git is already installed & running:
 ```
-git clone https://github.com/hegdeashwin/Nebula
+git clone https://github.com/Nebula-UI/Nebula.git
 ```
 
-Assuming that Node.js is already installed & running, 
+### On local system:
+
+Assuming that Node.js is already installed & running,
 
 Install dependencies:
 ```
 npm install
+```
+
+Assuming that Bower is already installed & running,
+
+Install client-side dependencies:
+```
+bower install
 ```
 
 To start the development server:
@@ -45,12 +59,55 @@ To start the production server:
 NODE_ENV=production node server.js
 ```
 
-Server layer
-============
+Open and run Protocore on browser
+```
+http://localhost:8000
+```
+
+### On Docker
+
+Assuming that Docker is already installed & running.
+
+Open terminal, change directory to the repository where you cloned Protocore and start root session
+```
+sudo -s
+```
+
+Build Protocore docker image
+```
+docker build -t <username>/<repository>
+```
+
+Verify if image got successfully created
+```
+docker images
+```
+
+Run Create image in background
+```
+docker run -d <username>/<repository>
+```
+
+Verify if the images is running in background
+```
+docker ps
+```
+
+Open and run Protocore on browser
+```
+http://localhost:8000
+```
+
+## Nebula Generator
+
+[Nebula-cli](https://github.com/Nebula-UI/nebula-cli) is a command line generator for Nebula. This tool will help to generate a walking application skeleton for a typical Backbone web apps.
+
+## Server layer
+
 The server side codebase resides in the ```server.js``` and ```config.js``` files. By default, the server layer is written in JavaScript (Node.js with Express 4.0) which can be configured and flexible to work with any server side scripting language like Java, PHP, ASP.NET or others. As client and server layer are seperate entity.
 
-Client layer
-============
+## Client layer
+
 The client side codebase resides in the ```src``` folder. This folder contains following subfolders.
 
 ```
@@ -76,74 +133,64 @@ The client side codebase resides in the ```src``` folder. This folder contains f
 	+--/core
 ```
 
-Task automation
-===============
+## Task automation
+
 Nebula comes with Grunt ecosystem - a JavaScript task runner to perform repetitive tasks like minification, compilation, unit testing, linting etc. Many of the tasks you need are already available as published Grunt plugins.
 
-Few task automations has been configured to detect errors and potential problems in codebase and to enforce your team's coding conventions. 
+Few task automations has been configured to detect errors and potential problems in codebase and to enforce your team's coding conventions.
 
 Following are the default Grunt plugins that has been integrated with Nebula architecture.
 
-**Individual tasks**
+**Automations tasks & commands**
 
-| Grunt Plugin 			 | Command                  | Task Performed              |
-|:-----------------------|:------------------------|:---------------------------|
-| grunt-htmlhint		 | grunt htmllint           | Detect errors and issues for HTML documents for index.html and templates. |
-| grunt-contrib-csslint	 | grunt csslint            | Detect errors and issues for CSS stylesheets. |
-| grunt-contrib-jshint	 | grunt jshint             | Detect errors and issues for JavaScript. |
-| grunt-jscs-checker	 | grunt jscs               | Detect unwanted spacing etc. for JavaScript. |
-| grunt-jsonlint		 | grunt jsonlint           | Detect errors and issues for JSON/Configuration files. |
-| grunt-contrib-less	 | grunt less:readyMade     | Compile all the less files. The files which comes with third party libraries or frameworks like Bootstrap 3.0 |
-| grunt-contrib-less     | grunt less:customMade    | Compile all the less files. The files which created by users as their custom stylesheets.
-| grunt-contrib-watch	 | grunt watch 				| Keep watch on less folders & files. Any changes in less file will automatically compile all the less files. |
-| grunt-contrib-qunit	 | grunt qunit 				| Perform unit testing. |
+| Linting commands |
+|:---|
+|Markdown : ```grunt mdlint``` |
+|HTML/Templates : ```grunt htmlhint```|
+|JavaScript : ```grunt jshint``` AND ```grunt jscs```|
+|JSON : ```grunt jsonlint```|
+|CSS : ```grunt csslint```|
 
-**Combine tasks**
+| Build commands |
+|:---|
+|Production : ```grunt build```|
 
-| Command                     | Task performed              |
-|:--------------------------- |:---------------------------|
-| grunt default               | Executing this command will perform the task to detect errors and issues for HTML, CSS, JavaScript and less compilation to CSS. It includes jshint, jscs, htmlhint, csslint, less:readyMade, less:customMade. |
-| grunt build              	  | Executing this command will perform the ```default``` task including clear and building production build. |
-| grunt compileless           | Executing this command will perform only less compilation to CSS which includes two sub-task ```less:readyMade```, ```less:customMade```. |
-| grunt tests		          | Executing this command will perform unit testing. |
+| Compilation commands |
+|:---|
+|LESS for development : ```grunt compileLessDev```|
+|LESS for production : ```grunt compileLessProd```|
 
-Special editions
-================
-<a href="http://backbonejs.org/" target="_blank">Boneloop</a> is an open source enterprise edition of <a href="https://github.com/hegdeashwin/Nebula" target="_blank">Nebula</a> based upon <a href="http://backbonejs.org/" target="_blank">Backbone</a> + <a href="http://marionettejs.com/" target="_blank">Marionette</a> - A scalable and composite application architecture for Backbone.js.
+| Watch commands |
+|:---|
+|LESS Compilation for development : ```grunt watchless```|
+
+| Unit test commands |
+|:---|
+|Browser: ```http://localhost:8080/tests/``` install http-server npm|
+|Console: ```grunt qunit```|
+
+|Report generator commands|
+|:---|
+|Plato : ```grunt analysis``` OR ```grunt plato```|
+
+## Special editions
+
+[Boneloop](https://github.com/Nebula-UI/Boneloop)
 
 Boneloop provides a client-[server]-side stack for building enterprise grade HTML5/Marionette applications. It could be used with any server side like Node.js, Ruby, PHP, JEE, Spring etc.
 
-By default it's server side environment comes with Node.js - <a href="http://loopback.io/" target="_blank">Loopback (StrongLoop)</a> stack.
+By default it's server side environment comes with Node.js - [Loopback (StrongLoop)](https://loopback.io/)
 
-Author & Contributors
-=====================
-Developed &amp; maintained by author: <b>Ashwin Hegde</b><br>
-Follow me at: <a href="https://github.com/hegdeashwin" target="_blank">github</a> | <a href="http://in.linkedin.com/in/hegdeashwin" target="_blank">Linkedin</a> | <a href="https://twitter.com/hegdeashwin3" target="_blank">Twitter</a>
+## Author & Contributors
 
-We really appreciate all kind of contributions. Special thanks to <a href="//github.com/hegdeashwin/Nebula/graphs/contributors" target="_blank">contributors</a> for using and supporting Nebula.
+We really appreciate all kind of contributions. Special thanks to [contributors](https://github.com/Nebula-UI/Nebula/graphs/contributors) for using and supporting Nebula.
 
 To request a feature or you find any typo errors, enhancements or questions; please feel free to post it on following link, or vote for the ones that are already registered.
-<br>Tracking: <a href="https://github.com/hegdeashwin/Nebula/issues" target="_blank">https://github.com/hegdeashwin/Nebula/issues</a>
 
-License
-=======
+Tracking: [https://github.com/Nebula-UI/Nebula/issues](https://github.com/Nebula-UI/Nebula/issues)
+
+## License
+
 The MIT License (MIT)
 
-Copyright (c) 2015 Ashwin Hegde
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-the Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Copyright (c) 2016 Ashwin Hegde
